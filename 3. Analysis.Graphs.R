@@ -17,7 +17,7 @@ names(bis)[names(bis)== "long"] <- "Longitude"
 names(bis)[names(bis)== "lat"] <- "Latitude"
 names(bis)[names(bis)== "temp"] <- "Temperature"
 
-#=====Here is code that needed to be run in order to store the graphs in the==== 
+#=====Here is code that needs to be run in order to store the graphs in the==== 
 # correct folder
 working.dir <- getwd() 
 output.folders <- c("1.Raw.Data","2.Clean.Data","3.Analysis","4.Graphs")
@@ -32,14 +32,13 @@ var.names <- colnames(bis)[expl.variable] #here is where the names are assigned
 color <- c("goldenrod1","sienna1","indianred2","hotpink3") # for the plot 
 color2 <- c("hotpink3","indianred2","goldenrod1","sienna1") #for the abline 
 
-#=========== Here is where we run the regression and get the results.========== 
+#=========== Here is where our regression results will be stored.========== 
 regr.results <- cbind.data.frame(intercept = rep(NA, length(expl.variable)), 
                                  coeffic = rep(NA, length(expl.variable)))
 #==========Here is where we create all our graphs and paste in folder===========
 for(i in 1:4){ #for loop 1 through 4 because we have 4 postions 
   
-  #i <- 1 #set i to one when running the 4 loop 
-  model.t <- lm(bis$mass ~ bis[, expl.variable[i]] ) # the coefficients for each 
+  model.t <- lm(bis$mass ~ bis[, expl.variable[i]] ) # linear regression model 
   # individual regression result 
   regr.results[i,]  <- model.t$coefficients
   
@@ -51,15 +50,14 @@ for(i in 1:4){ #for loop 1 through 4 because we have 4 postions
   dev.off() #close pdf 
 }
 
-#========Here is where the we put all our results in our results folder.======== 
+#========Here is where we put all our results in our results folder.======== 
 for(i in 1:4){ #create a for loop to create all the test statistics 
-#i <- 1
-model.t <- lm(bis$mass ~ bis[, expl.variable[i]] ) #run the coefficients for each
-#regression result.
-sum.t <- capture.output(summary(model.t)) #capture the output of the summary of 
-#model.t to make it readable. 
-cat(sum.t, file= paste(an.path,var.names[i],".txt" , sep = "")) #cat = 
-#cancatonate and paste as a txt file in the results folder.  
+  
+model.t <- lm(bis$mass ~ bis[, expl.variable[i]] ) #create a model for each explanatory variable.
+  
+sum.t <- capture.output(summary(model.t)) #capture the output of the summary of model.t . 
+  
+cat(sum.t, file= paste(an.path,var.names[i],".txt" , sep = "")) #cat = cancatonate and paste as a txt file in the results folder.  
 }
 
 #===============================END============================================

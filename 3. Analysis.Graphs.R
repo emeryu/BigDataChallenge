@@ -13,7 +13,7 @@
 
 #Change the names of the headers so that the x axis reads nicely. 
 names(bis)[names(bis)== "elev"] <- "Elevation"
-names(bis)[names(bis)== "long"] <- "Longitud"
+names(bis)[names(bis)== "long"] <- "Longitude"
 names(bis)[names(bis)== "lat"] <- "Latitude"
 names(bis)[names(bis)== "temp"] <- "Temperature"
 

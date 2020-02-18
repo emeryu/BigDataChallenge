@@ -49,4 +49,4 @@ The dataset was downloaded as a csv file. We saved the first worksheet titled Os
 
 ----------------------------RESULTS----------------------------------
 
-![minipic](4.Graphs/Elevation.png)  ![minipic](4.Graphs/Latitude.png) ![minipic](4.Graphs/Longitude.png) ![minipic](4.Graphs/Temperature.png)
+![](4.Graphs/Elevation.png) { width=50% } ![](4.Graphs/Latitude.png){ width=50% } ![](4.Graphs/Longitude.png){ width=50% } ![](4.Graphs/Temperature.png){ width=50% }

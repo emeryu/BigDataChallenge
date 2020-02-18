@@ -36,7 +36,7 @@ str(biso$dstl)
 mass <- (((biso$dstl[1:849])/11.43)^3)
 head(mass)
 
-#Add a new column to the data frame
+#Add a new column to the data frame for mass
 bis <- cbind(biso, mass)
 
 # Finally, check that the data frame is working and has all that you want 
@@ -46,5 +46,7 @@ str(bis)
 
 write.csv(bis, paste(cd.path, "bis.csv"),
           row.names = FALSE)
+
+#################################END DATA ClEANING##############################
 
 

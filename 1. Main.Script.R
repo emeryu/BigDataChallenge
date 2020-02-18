@@ -62,7 +62,7 @@ raw.data <- read.csv("Raw.Data.csv")
 
 #-----------------------------------WORKFLOW------------------------------------
 
-# In our working firectory we created 4 pathways to different folders with 
+# In our working directory we created 4 pathways to different folders with 
 # specific outputs 
 
 #           - 1.Raw.Data  -> the path to this folder is: rd.path
@@ -111,6 +111,9 @@ gr.path <- paste(working.dir,"/",output.folders[4], "/", sep="")
 
 write.csv(raw.data, paste(rd.path, "Raw.Data.csv"),
           row.names = FALSE)
+
 #-----------Source the other scripts----------- 
 source("2. Data.Cleaning.R")
 source("3. Analysis.Graphs.R")
+
+#################################END MAIN SCRIPT################################

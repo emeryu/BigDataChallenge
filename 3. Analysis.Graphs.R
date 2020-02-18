@@ -53,14 +53,16 @@ for(i in 1:4){ #for loop 1 through 4 because we have 4 postions
 #========Here is where we put all our results in our results folder.======== 
 for(i in 1:4){ #create a for loop to create all the test statistics 
   
-model.t <- lm(bis$mass ~ bis[, expl.variable[i]] ) #create a model for each explanatory variable.
+model.t <- lm(bis$mass ~ bis[, expl.variable[i]] ) #create a model for each explanatory 
+# variable.
   
 sum.t <- capture.output(summary(model.t)) #capture the output of the summary of model.t . 
   
-cat(sum.t, file= paste(an.path,var.names[i],".txt" , sep = "")) #cat = cancatonate and paste as a txt file in the results folder.  
+cat(sum.t, file= paste(an.path,var.names[i],".txt" , sep = "")) #cat = cancatonate 
+# and paste as a txt file in the results folder.  
 }
 
-#===============================END============================================
+###############################END ANALYSIS/GRAPHS #############################
 
 
 
